@@ -38,6 +38,9 @@ public class PeopleController {
     public ResponseEntity<HttpStatus> create(@RequestBody @Valid Person person, BindingResult bindingResult){
 
         if(bindingResult.hasErrors()){
+            //**********************************************
+            //(В локальном проекте) Вынес логику по отлову ошибки и созданию сообщения ошибки в отдельный класс в services
+            //**********************************************
             //Создаем строку с нашей ошибкой
             StringBuilder errorsMsg = new StringBuilder();
             //Добавляем ошибки из bindingResult в лист ошибок
